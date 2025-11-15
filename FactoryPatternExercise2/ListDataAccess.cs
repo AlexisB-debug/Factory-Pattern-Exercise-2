@@ -2,7 +2,6 @@ namespace FactoryPatternExercise2;
 
 public class ListDataAccess : IDataAccess
 {
-    // public static List<Product> Products = new List<Product>() { new Product() {Name = "", Price = 0} };
     List<Product> Products = new List<Product>();
     public ListDataAccess()
     {
@@ -11,14 +10,22 @@ public class ListDataAccess : IDataAccess
             Console.WriteLine("Please, type the parcel to place it in the shopping cart or type 'checkout'!");
             string input = Console.ReadLine();
 
-            if (input == "Checkout" || input == "checkout")
+            if (input.ToLower() == "checkout")
             {
                 break;
             }
 
             string parcel = input;
             Console.WriteLine($"Please, type the price of {parcel}");
-            decimal price = decimal.Parse(Console.ReadLine());
+
+            bool priceIsADecimal;
+            decimal price;
+
+            do
+            {
+                Console.WriteLine("The price is a figure");
+                priceIsADecimal = decimal.TryParse(Console.ReadLine(), out price);
+            }while(!priceIsADecimal);
 
             Product newProduct = new Product()
             {
@@ -28,7 +35,6 @@ public class ListDataAccess : IDataAccess
             Products.Add(newProduct);
         }while (true);
     }
-
     
     public List<Product> LoadData()
     {
