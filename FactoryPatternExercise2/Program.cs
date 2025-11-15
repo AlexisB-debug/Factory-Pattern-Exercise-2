@@ -16,13 +16,20 @@
                 Console.WriteLine($"Product: {product.Name}, Price: ${product.Price}");
             }
 
+            decimal total = 0;
+            for (int counter = 0; counter <= Products.Count - 1; counter = counter + 1)
+            {
+                total = total + Products[counter].Price;
+            }
+            Console.WriteLine($"Total Price: ${total}");
+
             static string DatabaseDoWhileLoop()
             {
                 string database;
 
                 do
                 {
-                    Console.WriteLine("Please, type 'List', 'SQL', or 'Mongo'");
+                    Console.WriteLine("Please, type 'List', 'Mongo', or 'SQL'");
                     database = Console.ReadLine().ToLower();
                 }while(database != "list" && database != "sql" && database != "mongo");
                 return database;

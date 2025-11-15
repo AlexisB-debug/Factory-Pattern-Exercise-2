@@ -38,7 +38,7 @@ public class MongoDataAccess : IDataAccess
     public List<Product> LoadData()
     {
         Console.WriteLine($"I am reading data from {typeof(MongoDataAccess)}");
-        return new List<Product>() {new Product() {Name = "", Price = 0}};
+        return Products;
     }
 
     public void SaveData()
