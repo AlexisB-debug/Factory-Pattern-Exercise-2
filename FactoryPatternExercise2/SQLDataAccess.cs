@@ -2,38 +2,79 @@ namespace FactoryPatternExercise2;
 
 public class SQLDataAccess : IDataAccess
 {
-    List<Product> Products = new List<Product>();
+    List<Product> Products = new List<Product>()
+    {
+        new Product() {Name = "Beanie Baby", Price = 35.00m, Quantity = 0},
+        new Product() {Name = "Cactus", Price = 25.00m, Quantity = 0},
+        new Product() {Name = "Dr. Seuss, The Cat in the Hat, Random House, 1957", Price = 6.00m, Quantity = 0},
+        new Product() {Name = "Roald Dahl, Charlie and the Chocolate Factory, Alfred A. Knopf, 1964", Price = 7.00m, Quantity = 0},
+        new Product() {Name = "Dive Rings", Price = 15.00m, Quantity = 0},
+        new Product() {Name = "E.T. the Extra-Terrestrial, Feature Films, 1982", Price = 17.00m, Quantity = 0},
+        new Product() {Name = "Furby", Price = 70.00m, Quantity = 0},
+        new Product() {Name = "Game Boy Color", Price = 75.00m, Quantity = 0},
+        new Product() {Name = "Goo Goo Dolls, Dizzy Up the Girl, 1998", Price = 15.00m, Quantity = 0},
+        new Product() {Name = "Monopoly", Price = 30.00m, Quantity = 0},
+        new Product() {Name = "Nintendo 64", Price = 500.00m, Quantity = 0},
+        new Product() {Name = "OPI Pixel Dust 15mL", Price = 12.00m, Quantity = 0},
+        new Product() {Name = "Piggy Bank", Price = 15.00m, Quantity = 0},
+        new Product() {Name = "Pokemon Standard Booster Pack (10 Cards)", Price = 7.00m, Quantity = 0},
+        new Product() {Name = "Ragdoll Kitten", Price = 700.00m, Quantity = 0}
+    };
     public SQLDataAccess()
     {
-        do
+        List<Product> ShoppingCart = new List<Product>();
+        Console.WriteLine("Please, type 'buy' to place the product in the shopping cart\nPlease, type 'decline' to keep the product on the shelf.");
+
+        foreach (Product product in Products)
         {
-            Console.WriteLine("Please, type the parcel to place it in the shopping cart or type 'checkout'!");
-            string input = Console.ReadLine();
-
-            if (input.ToLower() == "checkout")
-            {
-                break;
-            }
-
-            string parcel = input;
-            Console.WriteLine($"Please, type the price of {parcel}");
-
-            bool priceIsADecimal;
-            decimal price;
-
+            string input;
             do
             {
-                Console.WriteLine("The price is a figure");
-                priceIsADecimal = decimal.TryParse(Console.ReadLine(), out price);
-            }while(!priceIsADecimal);
+                Console.WriteLine($"{product.Name} ${product.Price}\nPlease, type 'buy' or 'decline'");
+                input = Console.ReadLine().ToLower();
+            }while(input != "buy" && input != "decline");
 
-            Product newProduct = new Product()
+            if (input == "buy")
             {
-                Name = parcel,
-                Price = price
-            };
-            Products.Add(newProduct);
-        }while (true);
+                Console.WriteLine($"Please, type the quantity of {product.Name}");
+                int quantity = TryParseDoWhileLoop();
+                
+                Product newProduct = new Product()
+                {
+                    Name = product.Name,
+                    Price = product.Price,
+                    Quantity = quantity
+                };
+                ShoppingCart.Add(newProduct);
+            }
+        }
+        Products = ShoppingCart;
+    }
+    
+    public static int TryParseDoWhileLoop()
+    {
+        int quantity;
+        bool quantityGreaterThanZero = true;
+
+        do
+        {
+            bool quantityIsAnInteger;
+            do
+            {
+                Console.WriteLine($"Please, type a quantity that can be placed in a shopping cart!");
+                quantityIsAnInteger = int.TryParse(Console.ReadLine(), out quantity);
+            } while (!quantityIsAnInteger);
+            
+            if (quantity > 0)
+            {
+                quantityGreaterThanZero = true;
+            }
+            else // (quantity <= 0)
+            {
+                quantityGreaterThanZero = false;
+            }
+        } while (!quantityGreaterThanZero);
+        return quantity;
     }
     public List<Product> LoadData()
     {
