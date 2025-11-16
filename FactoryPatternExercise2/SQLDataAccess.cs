@@ -54,8 +54,7 @@ public class SQLDataAccess : IDataAccess
     public static int TryParseDoWhileLoop()
     {
         int quantity;
-        bool quantityGreaterThanZero = true;
-
+        
         do
         {
             bool quantityIsAnInteger;
@@ -64,16 +63,8 @@ public class SQLDataAccess : IDataAccess
                 Console.WriteLine($"Please, type a quantity that can be placed in a shopping cart!");
                 quantityIsAnInteger = int.TryParse(Console.ReadLine(), out quantity);
             } while (!quantityIsAnInteger);
-            
-            if (quantity > 0)
-            {
-                quantityGreaterThanZero = true;
-            }
-            else // (quantity <= 0)
-            {
-                quantityGreaterThanZero = false;
-            }
-        } while (!quantityGreaterThanZero);
+        } while (quantity <= 0);
+        
         return quantity;
     }
     public List<Product> LoadData()
