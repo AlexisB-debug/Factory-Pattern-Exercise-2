@@ -10,19 +10,36 @@
             IDataAccess databaseAccess = DataAccessFactory.GetDataAccessType(databaseType);
             List<Product> Products = databaseAccess.LoadData();
             databaseAccess.SaveData();
-
-            foreach (Product product in Products)
+            
+            if (databaseType == "list" || databaseType == "mongo")
             {
-                Console.WriteLine($"Product: {product.Name}, Price: ${product.Price}");
-            }
+                foreach (Product product in Products)
+                {
+                    Console.WriteLine($"Product: {product.Name}, Price: ${product.Price}");
+                }
+                
+                decimal total = 0;
+                for (int counter = 0; counter <= Products.Count - 1; counter = counter + 1)
+                {
+                    total = total + Products[counter].Price;
+                }
 
-            decimal total = 0;
-            for (int counter = 0; counter <= Products.Count - 1; counter = counter + 1)
+                Console.WriteLine($"Total Price: ${total}");
+            }
+            else
             {
-                total = total + Products[counter].Price;
-            }
-            Console.WriteLine($"Total Price: ${total}");
+                foreach (Product product in Products)
+                {
+                    Console.WriteLine($"Product: {product.Name}, Price Per Unit: ${product.Price}, Quantity: {product.Quantity}, Volume Price: {product.Price * product.Quantity}");
+                }
 
+                decimal total = 0;
+                for (int counter = 0; counter <= Products.Count - 1; counter = counter + 1)
+                {
+                    total = total + (Products[counter].Price * Products[counter].Quantity);
+                }
+                Console.WriteLine($"Total Price: ${total}");
+            }
             static string DatabaseDoWhileLoop()
             {
                 string database;
