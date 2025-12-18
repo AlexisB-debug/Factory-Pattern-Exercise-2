@@ -1,0 +1,15 @@
+C:\Users\Alexi\Repos\Factory-Pattern-Exercise-2\FactoryPatternExercise2\bin\Debug\net9.0\FactoryPatternExercise2.exe
+C:\Users\Alexi\Repos\Factory-Pattern-Exercise-2\FactoryPatternExercise2\bin\Debug\net9.0\FactoryPatternExercise2.deps.json
+C:\Users\Alexi\Repos\Factory-Pattern-Exercise-2\FactoryPatternExercise2\bin\Debug\net9.0\FactoryPatternExercise2.runtimeconfig.json
+C:\Users\Alexi\Repos\Factory-Pattern-Exercise-2\FactoryPatternExercise2\bin\Debug\net9.0\FactoryPatternExercise2.dll
+C:\Users\Alexi\Repos\Factory-Pattern-Exercise-2\FactoryPatternExercise2\bin\Debug\net9.0\FactoryPatternExercise2.pdb
+C:\Users\Alexi\Repos\Factory-Pattern-Exercise-2\FactoryPatternExercise2\obj\Debug\net9.0\FactoryPatternExercise2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alexi\Repos\Factory-Pattern-Exercise-2\FactoryPatternExercise2\obj\Debug\net9.0\FactoryPatternExercise2.AssemblyInfoInputs.cache
+C:\Users\Alexi\Repos\Factory-Pattern-Exercise-2\FactoryPatternExercise2\obj\Debug\net9.0\FactoryPatternExercise2.AssemblyInfo.cs
+C:\Users\Alexi\Repos\Factory-Pattern-Exercise-2\FactoryPatternExercise2\obj\Debug\net9.0\FactoryPatternExercise2.csproj.CoreCompileInputs.cache
+C:\Users\Alexi\Repos\Factory-Pattern-Exercise-2\FactoryPatternExercise2\obj\Debug\net9.0\FactoryPatternExercise2.sourcelink.json
+C:\Users\Alexi\Repos\Factory-Pattern-Exercise-2\FactoryPatternExercise2\obj\Debug\net9.0\FactoryPatternExercise2.dll
+C:\Users\Alexi\Repos\Factory-Pattern-Exercise-2\FactoryPatternExercise2\obj\Debug\net9.0\refint\FactoryPatternExercise2.dll
+C:\Users\Alexi\Repos\Factory-Pattern-Exercise-2\FactoryPatternExercise2\obj\Debug\net9.0\FactoryPatternExercise2.pdb
+C:\Users\Alexi\Repos\Factory-Pattern-Exercise-2\FactoryPatternExercise2\obj\Debug\net9.0\FactoryPatternExercise2.genruntimeconfig.cache
+C:\Users\Alexi\Repos\Factory-Pattern-Exercise-2\FactoryPatternExercise2\obj\Debug\net9.0\ref\FactoryPatternExercise2.dll
